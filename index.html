@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Localization Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .intro {
+            background: #f8f9ff;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            border-left: 5px solid #667eea;
+        }
+
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-card li {
+            padding: 8px 0;
+            color: #666;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .portfolio-section {
+            margin-top: 50px;
+        }
+
+        .portfolio-section h2 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .project-info p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .language-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .intro {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>E-Learning Localization Portfolio</h1>
+            <p class="subtitle">Transforming Global Learning Experiences Through Expert Localization</p>
+        </header>
+
+        <div class="content">
+            <div class="intro">
+                <h2>About E-Learning Localization</h2>
+                <p>E-learning localization is the comprehensive process of adapting digital learning content for different languages, cultures, and regions. It goes far beyond simple translation to ensure that educational materials resonate with learners worldwide while maintaining instructional effectiveness.</p>
+                <p>Successful e-learning localization involves adapting text, graphics, multimedia elements, user interface components, and cultural references to create an authentic learning experience that feels natural to each target audience. This includes converting currencies, dates, measurements, and idioms while ensuring that learning objectives remain consistent across all language versions.</p>
+                <p>The process requires deep expertise in instructional design, linguistic accuracy, cultural sensitivity, and technical implementation to deliver courses that engage learners and achieve educational goals regardless of their geographic location or native language.</p>
+            </div>
+
+            <div class="services">
+                <div class="service-card">
+                    <h3>🌍 Multilingual Support</h3>
+                    <ul>
+                        <li>Translation to 50+ languages</li>
+                        <li>Native speaker review</li>
+                        <li>Cultural adaptation</li>
+                        <li>Regional variations</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>🎨 Visual Localization</h3>
+                    <ul>
+                        <li>Text resizing for different languages</li>
+                        <li>RTL language support (Arabic, Hebrew)</li>
+                        <li>Culturally appropriate imagery</li>
+                        <li>Icon and symbol adaptation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>🎬 Multimedia Adaptation</h3>
+                    <ul>
+                        <li>Voice-over recording</li>
+                        <li>Subtitle synchronization</li>
+                        <li>Video content localization</li>
+                        <li>Audio narration matching</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>⚙️ Technical Implementation</h3>
+                    <ul>
+                        <li>LMS integration</li>
+                        <li>SCORM compliance</li>
+                        <li>Responsive design</li>
+                        <li>Quality assurance testing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="portfolio-section">
+                <h2>Project Showcase</h2>
+                
+                <h3 style="color: #667eea; margin: 40px 0 20px 0; font-size: 1.8em;">Netflix Customer Activation Training - Italian</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <img src="images/netflix-screen1.png" alt="Netflix Training Introduction">
+                        <div class="project-info">
+                            <h3>Course Introduction</h3>
+                            <p>Landing page with engaging visuals and course overview. Features branded Netflix content with Italian localization.</p>
+                            <div>
+                                <span class="language-badge">Italian</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/netflix-screen2.png" alt="Netflix Training Navigation">
+                        <div class="project-info">
+                            <h3>Course Navigation</h3>
+                            <p>Responsive layout adapting to different screen sizes while maintaining visual consistency.</p>
+                            <div>
+                                <span class="language-badge">Italian</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/netflix-phase1.png" alt="Discovery Phase">
+                        <div class="project-info">
+                            <h3>Phase 1: Discovery</h3>
+                            <p>Interactive module explaining customer engagement strategies with icon-based navigation and clear role definitions.</p>
+                            <div>
+                                <span class="language-badge">Italian</span>
+                                <span class="language-badge">Interactive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/netflix-phase2.png" alt="Discovery Phase Detail">
+                        <div class="project-info">
+                            <h3>Phase Details</h3>
+                            <p>Detailed breakdown of customer interaction phases with visual indicators and role-specific guidance.</p>
+                            <div>
+                                <span class="language-badge">Italian</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/netflix-objectives.png" alt="Course Objectives">
+                        <div class="project-info">
+                            <h3>Learning Objectives</h3>
+                            <p>Clear course outcomes with dramatic visual background from popular Netflix content.</p>
+                            <div>
+                                <span class="language-badge">Italian</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/netflix-objectives2.png" alt="Course Objectives Detail">
+                        <div class="project-info">
+                            <h3>Detailed Learning Path</h3>
+                            <p>Structured presentation of learning objectives with visual emphasis on key competencies.</p>
+                            <div>
+                                <span class="language-badge">Italian</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: #667eea; margin: 60px 0 20px 0; font-size: 1.8em;">Emotional Driving Safety Course - Hindi & English</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <img src="images/driving-hindi.png" alt="Driving Course Hindi">
+                        <div class="project-info">
+                            <h3>Hindi Version</h3>
+                            <p>Single-choice quiz assessing understanding of emotional challenges while driving with Devanagari script support.</p>
+                            <div>
+                                <span class="language-badge">Hindi</span>
+                                <span class="language-badge">Single Choice</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/driving-hindi2.png" alt="Driving Course Hindi Detail">
+                        <div class="project-info">
+                            <h3>Hindi Interactive Quiz</h3>
+                            <p>Same question demonstrating consistent layout and functionality across language versions.</p>
+                            <div>
+                                <span class="language-badge">Hindi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/driving-english.png" alt="Driving Course English">
+                        <div class="project-info">
+                            <h3>English Version</h3>
+                            <p>English translation maintaining identical structure, imagery, and instructional design as Hindi version.</p>
+                            <div>
+                                <span class="language-badge">English</span>
+                                <span class="language-badge">Single Choice</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: #667eea; margin: 60px 0 20px 0; font-size: 1.8em;">Leadership Assessment Program - Arabic</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <img src="images/leadership-arabic.png" alt="Leadership Course Arabic">
+                        <div class="project-info">
+                            <h3>Arabic Multi-Select Assessment</h3>
+                            <p>Multiple-choice checklist format evaluating leadership behaviors from the past week.</p>
+                            <div>
+                                <span class="language-badge">Arabic</span>
+                                <span class="language-badge">RTL Support</span>
+                                <span class="language-badge">Multi-Select</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/leadership-arabic2.png" alt="Leadership Course Arabic Detail">
+                        <div class="project-info">
+                            <h3>Right-to-Left Layout</h3>
+                            <p>Demonstrates proper RTL implementation with Arabic text alignment and UI element positioning.</p>
+                            <div>
+                                <span class="language-badge">Arabic</span>
+                                <span class="language-badge">RTL Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/leadership-english.png" alt="Leadership Course English">
+                        <div class="project-info">
+                            <h3>English Reference Version</h3>
+                            <p>English version of the leadership assessment showing the LTR layout with identical functionality.</p>
+                            <div>
+                                <span class="language-badge">English</span>
+                                <span class="language-badge">Multi-Select</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <h2 style="color: #667eea; margin-bottom: 20px;">Ready to Localize Your E-Learning Content?</h2>
+                <p style="font-size: 1.1em; color: #666; margin-bottom: 30px;">Let's discuss how we can adapt your training materials for global audiences</p>
+                <a href="mailto:jerdyy@gmail.com" class="contact-btn">Get in Touch</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 E-Learning Localization Services | Delivering Quality Learning Experiences Worldwide</p>
+        </footer>
+    </div>
+</body>
+</html>
